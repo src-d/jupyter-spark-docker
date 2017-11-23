@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 RUN apt-get update && \
     apt-get -y install python3-pip && \
     apt-get remove -y gcc-6 libgcc-6-dev perl perl-modules-5.24 && \
-    apt-get autoremove && \
+    apt-get autoremove -y && \
     pip3 --no-cache-dir install jupyter
 
 # Spark
@@ -37,7 +37,6 @@ RUN ln -s $SPARK_DIR $SPARK_HOME && \
 RUN mkdir /root/.jupyter && \
     echo "c.NotebookApp.token = ''" > ~/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.notebook_dir = '/home'" >> ~/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.port = 8080" >> ~/.jupyter/jupyter_notebook_config.py
 
 # Toree
