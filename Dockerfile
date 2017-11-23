@@ -33,12 +33,6 @@ RUN ln -s $SPARK_DIR $SPARK_HOME && \
     ln -s /usr/bin/pip3 /usr/bin/pip && \
     ln -s /usr/bin/python3 /usr/bin/python
 
-# Disable jupyter token
-RUN mkdir /root/.jupyter && \
-    echo "c.NotebookApp.token = ''" > ~/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.open_browser = False" >> ~/.jupyter/jupyter_notebook_config.py && \
-    echo "c.NotebookApp.port = 8080" >> ~/.jupyter/jupyter_notebook_config.py
-
 # Toree
 RUN pip install --no-cache-dir https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0/snapshots/dev1/toree-pip/toree-0.2.0.dev1.tar.gz && \
     jupyter toree install --spark_home=/usr/local/spark
