@@ -20,7 +20,9 @@ RUN mkdir -p /usr/share/man/man1 && \
       openjdk-8-jre-headless \
       ca-certificates-java \
       curl && \
+    apt-get remove -y gcc-6 libgcc-6-dev perl perl-modules-5.24 && \
     apt-get clean && \
+    rm -rf /var/lib/apt/* && \
     curl http://d3kbcqa49mib13.cloudfront.net/${SPARK_NAME}.tgz | \
     tar xzf - -C /opt
 
