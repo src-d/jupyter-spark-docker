@@ -1,0 +1,13 @@
+services:
+  - docker
+
+install:
+  - make docker-build
+
+script: make docker-test
+
+deploy:
+  provider: script
+  script: make docker-push
+  on:
+    tags: true
