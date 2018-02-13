@@ -17,10 +17,10 @@ docker build -t srcd/jupyter-spark .
 ## Run
 
 ```
-docker run -it -p 8080:8080 srcd/jupyter-spark
+docker run -it -p 8888:8888 srcd/jupyter-spark
 ```
 
-Jupyter listens in port 8080. You'll have to use the token provided in the log file to access the service.
+Jupyter listens in port 8888. You'll have to use the token provided in the log file to access the service.
 
 In case you want to change the configuration to listen in another port or skip token check you can create a configuration file. For example:
 
