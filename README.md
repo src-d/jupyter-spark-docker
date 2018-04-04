@@ -32,3 +32,8 @@ RUN mkdir -p /root/.jupyter && \
     echo "c.NotebookApp.port = 8080" >> ~/.jupyter/jupyter_notebook_config.py
 ```
 
+You can modify Spark options at runtime by setting the `SPARK_OPTS` environment variable. For example:
+
+```
+docker run -it -p 8888:8888 -e 'SPARK_OPTS=--driver-memory=8g' srcd/jupyter-spark
+```
