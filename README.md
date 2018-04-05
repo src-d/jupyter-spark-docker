@@ -4,9 +4,9 @@ Dockerfile with spark and jupyter instalation. It's the base for the [engine](ht
 
 It contains:
 
-* Jupyter 5.2.1
-* Spark 2.7.4
-* Toree dev 0.2.0
+* Jupyter 5.4.1
+* Spark 2.2.0
+* Toree 0.2.0-incubating-rc4
 
 ## Build
 
