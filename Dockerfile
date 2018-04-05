@@ -37,7 +37,7 @@ RUN ln -s $SPARK_DIR $SPARK_HOME && \
 RUN pip install --no-cache-dir https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0/snapshots/dev1/toree-pip/toree-0.2.0.dev1.tar.gz && \
     jupyter toree install --spark_home=/usr/local/spark
 
-EXPOSE 8888
+EXPOSE 8080
 
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root"]
 
