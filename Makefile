@@ -15,7 +15,7 @@ DOCKER_IMAGE = $(DOCKER_REGISTRY)/$(DOCKER_ORG)/$(PROJECT):$(VERSION)
 
 docker-test: docker-build
 	docker rm -f $(PROJECT)-test || true
-	docker run --name $(PROJECT)-test --rm -p 8888:8888 -d $(DOCKER_IMAGE)
-	wget --tries=5 http://localhost:8888
+	docker run --name $(PROJECT)-test --rm -p 8080:8080 -d $(DOCKER_IMAGE)
+	wget --tries=5 http://localhost:8080
 
 
