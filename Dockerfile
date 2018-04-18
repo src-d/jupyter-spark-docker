@@ -34,7 +34,9 @@ RUN ln -s $SPARK_DIR $SPARK_HOME && \
     ln -s /usr/bin/python3 /usr/bin/python
 
 # Toree
-RUN pip install --no-cache-dir https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0/snapshots/dev1/toree-pip/toree-0.2.0.dev1.tar.gz && \
+RUN pip install --no-cache-dir \
+      notebook==5.4.1 \
+      https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0-incubating-rc4/toree-pip/toree-0.2.0.tar.gz && \
     jupyter toree install --spark_home=/usr/local/spark
 
 EXPOSE 8888
