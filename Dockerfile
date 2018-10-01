@@ -8,7 +8,7 @@ RUN apt-get update && \
     pip3 --no-cache-dir install jupyter
 
 # Spark
-ARG APACHE_SPARK_VERSION=2.2.0
+ARG APACHE_SPARK_VERSION=2.3.2
 ARG HADOOP_VERSION=2.7
 ENV SPARK_NAME=spark-${APACHE_SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}
 
@@ -23,7 +23,7 @@ RUN mkdir -p /usr/share/man/man1 && \
       ca-certificates-java \
       curl && \
     rm -rf /var/lib/apt/* && \
-    curl http://d3kbcqa49mib13.cloudfront.net/${SPARK_NAME}.tgz | \
+    curl http://apache.rediris.es/spark/spark-${APACHE_SPARK_VERSION}/${SPARK_NAME}.tgz | \
     tar xzf - -C /opt && \
     apt-get remove -y curl && \
     apt-get clean
@@ -35,7 +35,7 @@ RUN ln -s $SPARK_DIR $SPARK_HOME && \
 
 # Toree
 RUN pip install --no-cache-dir \
-      notebook==5.4.1 \
+      notebook==5.7.0 \
       https://dist.apache.org/repos/dist/dev/incubator/toree/0.2.0-incubating-rc4/toree-pip/toree-0.2.0.tar.gz && \
     jupyter toree install --spark_home=/usr/local/spark
 
