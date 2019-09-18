@@ -37,3 +37,16 @@ You can modify Spark options at runtime by setting the `SPARK_OPTS` environment 
 ```
 docker run -it -p 8888:8888 -e 'SPARK_OPTS=--driver-memory=8g' srcd/jupyter-spark
 ```
+
+# Contribute
+
+[Contributions](https://github.com/src-d/jupyter-spark-docker/issues) are more than welcome, if you are interested please take a look to
+our [Contributing Guidelines](CONTRIBUTING.md).
+
+# Code of Conduct
+
+All activities under source{d} projects are governed by the [source{d} code of conduct](.github/CODE_OF_CONDUCT.md).
+
+# License
+
+Apache License Version 2.0, see [LICENSE](LICENSE).
